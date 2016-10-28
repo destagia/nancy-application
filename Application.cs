@@ -5,14 +5,14 @@ namespace NancyApplication
     using Nancy.Owin;
     using System.IO;
 
-    public class Startup
+    public class Application
     {
         public static void Main(string[] args)
         {
             var host = new WebHostBuilder()
                 .UseContentRoot(Directory.GetCurrentDirectory())
                 .UseKestrel()
-                .UseStartup<Startup>()
+                .UseStartup<Application>()
                 .Build();
 
             host.Run();
